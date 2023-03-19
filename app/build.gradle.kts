@@ -1,8 +1,9 @@
 @file:Suppress("UnstableApiUsage")
 
 plugins {
-    id (BuildPlugins.androidApplication)
-    id (BuildPlugins.kotlinAndroid)
+    id(BuildPlugins.androidApplication)
+    id(BuildPlugins.kotlinAndroid)
+    id(BuildPlugins.ktlintPlugin)
 }
 
 android {
@@ -50,16 +51,16 @@ android {
 
 dependencies {
 
-    implementation (Libraries.ktxCore)
-    implementation (Libraries.lifecycle)
-    implementation (Libraries.composeActivity)
-    implementation (Libraries.composeUi)
-    implementation (Libraries.composeTooling)
-    implementation (Libraries.composeMaterial3)
-    testImplementation (TestLibraries.junit4)
-    androidTestImplementation (TestLibraries.junit)
-    androidTestImplementation (TestLibraries.espresso)
-    androidTestImplementation (TestLibraries.composeJunit4)
-    debugImplementation (TestLibraries.composeTooling)
-    debugImplementation (TestLibraries.composeManifest)
+    implementation(Libraries.ktxCore)
+    implementation(Libraries.lifecycle)
+    implementation(Libraries.composeActivity)
+    implementation(Libraries.composeUi)
+    implementation(Libraries.composeTooling)
+    implementation(Libraries.composeMaterial3)
+    testImplementation(TestLibraries.junit4)
+    androidTestImplementation(TestLibraries.junit)
+    androidTestImplementation(TestLibraries.espresso)
+    androidTestImplementation(TestLibraries.composeJunit4)
+    debugImplementation(TestLibraries.composeTooling)
+    debugImplementation(TestLibraries.composeManifest)
 }

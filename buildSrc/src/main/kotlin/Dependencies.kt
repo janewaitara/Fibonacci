@@ -19,12 +19,16 @@ object Versions {
 
     //Lifecycle
     const val lifecycle = "2.6.0"
+
+    // Gradle Plugins - ktlint
+    const val ktlint = "10.2.1"
 }
 object BuildPlugins {
     //All the build plugins are added here
     const val androidLibrary = "com.android.library"
     const val androidApplication = "com.android.application"
     const val kotlinAndroid = "org.jetbrains.kotlin.android"
+    const val ktlintPlugin = "org.jlleitschuh.gradle.ktlint"
 }
 object Libraries {
     //Any Library is added here
