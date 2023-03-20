@@ -13,10 +13,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.mumbicodes.fibonacci.R
 import com.mumbicodes.fibonacci.domain.model.FibonacciSearch
 import com.mumbicodes.fibonacci.presentation.components.EmptyStateComposable
 import com.mumbicodes.fibonacci.presentation.components.FibonacciCardComposable
@@ -39,7 +41,7 @@ fun SearchScreen(
     ) {
         Spacer(modifier = Modifier.height(36.dp))
         Text(
-            text = "Search Fibonacci numbers",
+            text = stringResource(id = R.string.app_heading),
             style = MaterialTheme.typography.headlineLarge.copy(color = MaterialTheme.colorScheme.onBackground),
             modifier = Modifier
                 .fillMaxWidth()
@@ -78,7 +80,7 @@ fun SearchScreen(
                 ),
             ) {
                 Text(
-                    text = "Search",
+                    text = stringResource(R.string.request),
                     style = MaterialTheme.typography.labelLarge
                 )
             }
@@ -107,7 +109,7 @@ fun SearchScreen(
 fun SearchResults(fibonacciSearch: FibonacciSearch) {
     Column {
         Text(
-            text = "Search results",
+            text = stringResource(id = R.string.search_results),
             style = MaterialTheme.typography.bodySmall.copy(
                 color = MaterialTheme.colorScheme.onSurface,
                 fontWeight = FontWeight.Medium
@@ -148,7 +150,7 @@ fun PreviousSearches(
         Column {
             Row {
                 Text(
-                    text = "Recent searches",
+                    text = stringResource(id = R.string.recent_Searches),
                     style = MaterialTheme.typography.bodySmall.copy(
                         color = MaterialTheme.colorScheme.onSurface,
                         fontWeight = FontWeight.Medium
@@ -160,7 +162,7 @@ fun PreviousSearches(
                 Spacer(modifier = Modifier.width(24.dp))
 
                 Text(
-                    text = "Clear All",
+                    text = stringResource(id = R.string.clear_All),
                     style = MaterialTheme.typography.bodyMedium.copy(color = MaterialTheme.colorScheme.error),
                     modifier = Modifier
                         .clip(shape = MaterialTheme.shapes.small)

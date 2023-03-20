@@ -2,5 +2,10 @@
     <string name="app_name">Fibonacci</string>
     <string name="search_placeHolder">Enter number to search</string>
     <string name="search_heading">"Search "</string>
-    <string name="search_Desc">Enter a digit(s) to search for arbitrary numbers</string>
+    <string name="search_Desc">Enter a digit(s) to request for arbitrary numbers</string>
+    <string name="request">Request</string>
+    <string name="clear_All">Clear All</string>
+    <string name="recent_Searches">Recent searches</string>
+    <string name="search_results">Search results</string>
+    <string name="app_heading">Search arbitrary numbers</string>
 </resources>
