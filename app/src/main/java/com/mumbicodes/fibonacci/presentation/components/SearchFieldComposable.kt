@@ -72,7 +72,7 @@ fun SearchFieldComposable(
                     style = MaterialTheme.typography.bodySmall
                 )
             },
-            textStyle = MaterialTheme.typography.bodySmall.copy(color = MaterialTheme.colorScheme.inverseSurface),
+            textStyle = MaterialTheme.typography.bodySmall.copy(color = MaterialTheme.colorScheme.onSurface),
 
             singleLine = true,
 

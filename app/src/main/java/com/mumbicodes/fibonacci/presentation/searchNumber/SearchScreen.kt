@@ -14,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -32,13 +33,14 @@ fun SearchScreen(
 
     Column(
         modifier = Modifier
+            .background(color = MaterialTheme.colorScheme.background)
             .fillMaxSize()
             .padding(20.dp)
     ) {
         Spacer(modifier = Modifier.height(36.dp))
         Text(
             text = "Search Fibonacci numbers",
-            style = MaterialTheme.typography.headlineLarge.copy(color = MaterialTheme.colorScheme.onSurface),
+            style = MaterialTheme.typography.headlineLarge.copy(color = MaterialTheme.colorScheme.onBackground),
             modifier = Modifier
                 .fillMaxWidth()
         )
@@ -71,8 +73,8 @@ fun SearchScreen(
                 colors = ButtonDefaults.buttonColors(
                     containerColor = MaterialTheme.colorScheme.primary,
                     contentColor = MaterialTheme.colorScheme.onPrimary,
-                    disabledContainerColor = MaterialTheme.colorScheme.primaryContainer,
-                    disabledContentColor = MaterialTheme.colorScheme.onPrimary
+                    disabledContainerColor = MaterialTheme.colorScheme.primary,
+                    disabledContentColor = MaterialTheme.colorScheme.onPrimaryContainer
                 ),
             ) {
                 Text(
@@ -82,7 +84,7 @@ fun SearchScreen(
             }
         }
 
-        Spacer(modifier = Modifier.height(24.dp))
+        Spacer(modifier = Modifier.height(36.dp))
 
         when (state.value) {
             is FibonacciUiState.Data -> {
@@ -107,7 +109,10 @@ fun SearchResults(fibonacciSearch: FibonacciSearch) {
     Column {
         Text(
             text = "Search results",
-            style = MaterialTheme.typography.bodySmall.copy(color = MaterialTheme.colorScheme.onSurface),
+            style = MaterialTheme.typography.bodySmall.copy(
+                color = MaterialTheme.colorScheme.onSurface,
+                fontWeight = FontWeight.Medium
+            ),
             modifier = Modifier
                 .fillMaxWidth()
         )
@@ -145,7 +150,10 @@ fun PreviousSearches(
             Row {
                 Text(
                     text = "Recent searches",
-                    style = MaterialTheme.typography.bodySmall.copy(color = MaterialTheme.colorScheme.onSurface),
+                    style = MaterialTheme.typography.bodySmall.copy(
+                        color = MaterialTheme.colorScheme.onSurface,
+                        fontWeight = FontWeight.Medium
+                    ),
                     modifier = Modifier
                         .weight(1f)
                 )
@@ -154,12 +162,13 @@ fun PreviousSearches(
 
                 Text(
                     text = "Clear All",
-                    style = MaterialTheme.typography.bodyMedium.copy(color = MaterialTheme.colorScheme.primary),
+                    style = MaterialTheme.typography.bodyMedium.copy(color = MaterialTheme.colorScheme.error),
                     modifier = Modifier
-                        .padding(start = 8.dp)
+                        .clip(shape = MaterialTheme.shapes.small)
+                        .background(color = MaterialTheme.colorScheme.onError)
+                        .padding(horizontal = 8.dp, vertical = 2.dp)
                         .clickable(
                             onClick = onClearClicked
-
                         )
                 )
             }
