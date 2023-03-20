@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 data class FibonacciSearch(
     @PrimaryKey(autoGenerate = true)
     var fibonacciId: Int = 0,
-    var searchedNumber: Int,
+    var searchedNumber: Long,
     var fibResult: List<Int>,
     var timeSearched: Long,
 )

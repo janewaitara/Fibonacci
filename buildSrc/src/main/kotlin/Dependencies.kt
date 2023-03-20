@@ -60,11 +60,13 @@ object Libraries {
     const val composeTooling = "androidx.compose.ui:ui-tooling-preview:${Versions.composeUi}"
     const val composeMaterial3 = "androidx.compose.material3:material3:${Versions.composeMaterial3}"
     const val composeActivity = "androidx.activity:activity-compose:${Versions.activityCompose}"
+    const val constraintLayoutCompose =
+        "androidx.constraintlayout:constraintlayout-compose:${Versions.constraintLayoutCompose}"
 
     //Lifecycle
     const val lifecycle = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycle}"
     const val lifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel-compose:${Versions.lifecycle}"
-
+    const val lifecycleCompose = "androidx.lifecycle:lifecycle-runtime-compose:${Versions.lifecycle}"
 
     // Hilt
     const val hiltGradle = "com.google.dagger:hilt-android-gradle-plugin:${Versions.hilt}"

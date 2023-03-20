@@ -62,12 +62,14 @@ dependencies {
     // Lifecycle
     implementation(Libraries.lifecycle)
     implementation(Libraries.lifecycleViewModel)
+    implementation(Libraries.lifecycleCompose)
 
     // Compose
     implementation(Libraries.composeActivity)
     implementation(Libraries.composeUi)
     implementation(Libraries.composeTooling)
     implementation(Libraries.composeMaterial3)
+    implementation(Libraries.constraintLayoutCompose)
 
     // DI - Hilt
     implementation(Libraries.hiltAndroid)

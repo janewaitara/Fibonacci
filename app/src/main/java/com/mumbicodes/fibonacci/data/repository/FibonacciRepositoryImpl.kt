@@ -4,6 +4,7 @@ import com.mumbicodes.fibonacci.data.db.FibonacciDao
 import com.mumbicodes.fibonacci.domain.model.FibonacciSearch
 import com.mumbicodes.fibonacci.domain.repository.FibonacciRepository
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 
 class FibonacciRepositoryImpl(private val fibonacciDao: FibonacciDao) : FibonacciRepository {
     override suspend fun insertFibonacciNumber(fibonacciSearch: FibonacciSearch) {
@@ -11,7 +12,11 @@ class FibonacciRepositoryImpl(private val fibonacciDao: FibonacciDao) : Fibonacc
     }
 
     override fun getFibonacciNumbers(): Flow<List<FibonacciSearch>> =
-        fibonacciDao.getFibonacciNumbers()
+        fibonacciDao.getFibonacciNumbers().map { list ->
+            list.sortedByDescending {
+                it.timeSearched
+            }
+        }
 
     override suspend fun deleteFibonacciNumber(fibonacciId: Int) {
         fibonacciDao.deleteFibonacci(fibonacciId)

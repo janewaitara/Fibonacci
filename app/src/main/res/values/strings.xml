@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Fibonacci</string>
+    <string name="search_placeHolder">Enter number to search</string>
 </resources>
