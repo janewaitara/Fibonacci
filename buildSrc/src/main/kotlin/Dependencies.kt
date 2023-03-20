@@ -22,6 +22,20 @@ object Versions {
 
     // Gradle Plugins - ktlint
     const val ktlint = "10.2.1"
+
+    // Hilt
+    const val hilt = "2.45"
+    const val hiltWithOtherLibs = "1.0.0"
+
+    //Room
+    const val room = "2.5.0"
+
+    // Coroutines
+    const val coroutines = "1.5.0"
+
+    //Navigation
+    const val navVersion = "2.5.0-alpha03"
+
 }
 object BuildPlugins {
     //All the build plugins are added here
@@ -29,6 +43,7 @@ object BuildPlugins {
     const val androidApplication = "com.android.application"
     const val kotlinAndroid = "org.jetbrains.kotlin.android"
     const val ktlintPlugin = "org.jlleitschuh.gradle.ktlint"
+    const val hiltPlugin = "dagger.hilt.android.plugin"
 }
 object Libraries {
     //Any Library is added here
@@ -42,6 +57,29 @@ object Libraries {
 
     //Lifecycle
     const val lifecycle = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycle}"
+    const val lifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel-compose:${Versions.lifecycle}"
+
+
+    // Hilt
+    const val hiltGradle = "com.google.dagger:hilt-android-gradle-plugin:${Versions.hilt}"
+    const val hiltAndroid = "com.google.dagger:hilt-android:${Versions.hilt}"
+    const val hiltCompilerAndroid = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
+    const val hiltCompiler = "androidx.hilt:hilt-compiler:${Versions.hiltWithOtherLibs}"
+    const val hiltNavigation = "androidx.hilt:hilt-navigation-compose:${Versions.hiltWithOtherLibs}"
+
+    //Navigation
+    const val navigationCompose = "androidx.navigation:navigation-compose:${Versions.navVersion}"
+
+    //Room
+    const val roomRuntime = "androidx.room:room-runtime:${Versions.room}"
+    const val roomCompiler =  "androidx.room:room-compiler:${Versions.room}"
+    const val roomKtx =  "androidx.room:room-ktx:${Versions.room}"
+
+    // Coroutines
+    const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
+    const val coroutinesAndroid =
+        "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
+
 }
 object TestLibraries {
     //any test library is added here

@@ -4,6 +4,11 @@ plugins {
     id(BuildPlugins.kotlinAndroid) version Versions.kotlin apply false
     id(BuildPlugins.ktlintPlugin) version Versions.ktlint
 }
+buildscript {
+    dependencies {
+        classpath(Libraries.hiltGradle)
+    }
+}
 
 allprojects {
 

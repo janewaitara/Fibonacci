@@ -1,9 +1,14 @@
 @file:Suppress("UnstableApiUsage")
 
+import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
+
 plugins {
     id(BuildPlugins.androidApplication)
     id(BuildPlugins.kotlinAndroid)
     id(BuildPlugins.ktlintPlugin)
+    id(BuildPlugins.hiltPlugin)
+    id("kotlin-kapt")
+    kotlin("kapt")
 }
 
 android {
@@ -52,11 +57,35 @@ android {
 dependencies {
 
     implementation(Libraries.ktxCore)
+
+    // Lifecycle
     implementation(Libraries.lifecycle)
+    implementation(Libraries.lifecycleViewModel)
+
+    // Compose
     implementation(Libraries.composeActivity)
     implementation(Libraries.composeUi)
     implementation(Libraries.composeTooling)
     implementation(Libraries.composeMaterial3)
+
+    // DI - Hilt
+    implementation(Libraries.hiltAndroid)
+    kapt(Libraries.hiltCompilerAndroid)
+    kapt(Libraries.hiltCompiler)
+    implementation(Libraries.hiltNavigation)
+
+    // Room
+    implementation(Libraries.roomRuntime)
+    kapt(Libraries.roomCompiler)
+    implementation(Libraries.roomKtx)
+
+    // Coroutines
+    implementation(Libraries.coroutines)
+    implementation(Libraries.coroutinesAndroid)
+
+    // Navigation
+    implementation(Libraries.navigationCompose)
+
     testImplementation(TestLibraries.junit4)
     androidTestImplementation(TestLibraries.junit)
     androidTestImplementation(TestLibraries.espresso)

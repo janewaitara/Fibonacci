@@ -1,4 +1,4 @@
-package com.mumbicodes.fibonacci.ui.theme
+package com.mumbicodes.fibonacci.presentation.theme
 
 import androidx.compose.ui.graphics.Color
 

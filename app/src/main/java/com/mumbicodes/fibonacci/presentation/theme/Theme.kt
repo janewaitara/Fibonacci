@@ -1,4 +1,4 @@
-package com.mumbicodes.fibonacci.ui.theme
+package com.mumbicodes.fibonacci.presentation.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
