@@ -8,6 +8,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.shadow
@@ -25,6 +26,9 @@ fun SearchFieldComposable(
     searchedText: String = "",
     onSearchParamChanged: (String) -> Unit = {},
 ) {
+
+    val pattern = remember { Regex("^\\d+\$") }
+
     Surface(
         modifier = modifier
             .shadow(
@@ -38,11 +42,9 @@ fun SearchFieldComposable(
         TextField(
             value = searchedText,
             onValueChange = {
-                if (it.isNotEmpty()) {
+                if (it.isEmpty() || it.matches(pattern)) {
                     onSearchParamChanged(
-                        it.filter { symbol ->
-                            symbol.isDigit()
-                        }
+                        it
                     )
                 }
             },

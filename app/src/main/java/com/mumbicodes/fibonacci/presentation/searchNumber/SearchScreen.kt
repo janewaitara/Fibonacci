@@ -29,13 +29,6 @@ fun SearchScreen(
     val state = viewModel.state.collectAsStateWithLifecycle()
     val searchParam = viewModel.searchParamState.value
 
-    val log = when (state.value) {
-        is FibonacciUiState.Data -> "Data"
-        FibonacciUiState.Loading -> "Loading"
-        is FibonacciUiState.SearchResult -> "Result"
-    }
-    Log.e("State 2", log)
-
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -73,7 +66,7 @@ fun SearchScreen(
                     .widthIn()
                     .height(54.dp),
                 shape = MaterialTheme.shapes.small,
-                enabled = true,
+                enabled = searchParam.isNotEmpty(),
                 colors = ButtonDefaults.buttonColors(
                     containerColor = MaterialTheme.colorScheme.primary,
                     contentColor = MaterialTheme.colorScheme.onPrimary,
@@ -116,7 +109,6 @@ fun SearchResults(fibonacciSearch: FibonacciSearch) {
         )
 
         Spacer(modifier = Modifier.height(16.dp))
-        Log.e("State 4", fibonacciSearch.searchedNumber.toString())
 
         FibonacciCardComposable(
             modifier = Modifier
