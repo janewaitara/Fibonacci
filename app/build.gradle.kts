@@ -86,6 +86,10 @@ dependencies {
     // Navigation
     implementation(Libraries.navigationCompose)
 
+    // Moshi
+    implementation(Libraries.moshi)
+    implementation(Libraries.moshiConverter)
+
     testImplementation(TestLibraries.junit4)
     androidTestImplementation(TestLibraries.junit)
     androidTestImplementation(TestLibraries.espresso)

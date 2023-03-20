@@ -36,6 +36,12 @@ object Versions {
     //Navigation
     const val navVersion = "2.5.0-alpha03"
 
+    // Moshi
+    const val moshi = "1.13.0"
+
+    // Retrofit
+    const val retrofit = "2.9.0"
+
 }
 object BuildPlugins {
     //All the build plugins are added here
@@ -79,6 +85,11 @@ object Libraries {
     const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
     const val coroutinesAndroid =
         "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
+
+    // Moshi
+    const val moshi = "com.squareup.moshi:moshi-kotlin:${Versions.moshi}"
+    const val moshiConverter = "com.squareup.retrofit2:converter-moshi:${Versions.retrofit}"
+
 
 }
 object TestLibraries {
