@@ -1,6 +1,5 @@
 package com.mumbicodes.fibonacci.presentation.searchNumber
 
-import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -22,6 +21,7 @@ import com.mumbicodes.fibonacci.domain.model.FibonacciSearch
 import com.mumbicodes.fibonacci.presentation.components.EmptyStateComposable
 import com.mumbicodes.fibonacci.presentation.components.FibonacciCardComposable
 import com.mumbicodes.fibonacci.presentation.components.SearchFieldComposable
+import com.mumbicodes.fibonacci.presentation.components.ShimmerEffectComposable
 import com.mumbicodes.fibonacci.presentation.util.provideShadowColor
 
 @Composable
@@ -94,8 +94,7 @@ fun SearchScreen(
                 )
             }
             FibonacciUiState.Loading -> {
-                // TODO
-                Log.e("State", "Loading")
+                ShimmerEffectComposable()
             }
             is FibonacciUiState.SearchResult -> {
                 SearchResults((state.value as FibonacciUiState.SearchResult).result)
