@@ -86,7 +86,10 @@ fun SearchScreen(
 
         when (state.value) {
             is FibonacciUiState.Data -> {
-                PreviousSearches((state.value as FibonacciUiState.Data).data)
+                PreviousSearches(
+                    (state.value as FibonacciUiState.Data).data,
+                    onClearClicked = { viewModel.deleteAllFibonacciNumbers() }
+                )
             }
             FibonacciUiState.Loading -> {
                 // TODO
@@ -131,7 +134,10 @@ fun SearchResults(fibonacciSearch: FibonacciSearch) {
 }
 
 @Composable
-fun PreviousSearches(fibonacciSearches: List<FibonacciSearch>) {
+fun PreviousSearches(
+    fibonacciSearches: List<FibonacciSearch>,
+    onClearClicked: () -> Unit,
+) {
     if (fibonacciSearches.isEmpty()) {
         EmptyStateComposable()
     } else {
@@ -152,9 +158,8 @@ fun PreviousSearches(fibonacciSearches: List<FibonacciSearch>) {
                     modifier = Modifier
                         .padding(start = 8.dp)
                         .clickable(
-                            onClick = {
-                                TODO()
-                            }
+                            onClick = onClearClicked
+
                         )
                 )
             }
