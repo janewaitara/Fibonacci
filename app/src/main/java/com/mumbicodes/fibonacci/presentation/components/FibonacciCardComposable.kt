@@ -40,30 +40,33 @@ fun FibonacciCardComposable(
         Text(
             modifier = Modifier
                 .constrainAs(timeSearched) {
-                    top.linkTo(searchedNumber.bottom, margin = 12.dp)
-                    bottom.linkTo(parent.bottom)
+                    start.linkTo(searchedNumber.end, margin = 16.dp)
+                    top.linkTo(parent.top)
+                    end.linkTo(parent.end)
+
+                    width = Dimension.fillToConstraints
                 },
             text = fibonacciSearch.timeSearched.toDateString(),
             style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.inverseOnSurface,
             maxLines = 1,
             overflow = TextOverflow.Ellipsis,
+            textAlign = TextAlign.End,
         )
 
         Text(
             modifier = Modifier
                 .constrainAs(result) {
-                    start.linkTo(timeSearched.end, margin = 16.dp)
+                    start.linkTo(parent.start)
                     end.linkTo(parent.end)
-                    top.linkTo(searchedNumber.top)
-                    bottom.linkTo(timeSearched.bottom)
+                    top.linkTo(searchedNumber.bottom, margin = 16.dp)
+                    bottom.linkTo(parent.bottom)
 
                     width = Dimension.fillToConstraints
                 },
             text = fibonacciSearch.fibResult.joinToString(", "),
             style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Bold),
             color = MaterialTheme.colorScheme.onSurface,
-            textAlign = TextAlign.End,
         )
     }
 }

@@ -72,7 +72,7 @@ class SearchNumberViewModel @Inject constructor(
             prev = curr
             curr = nextFib
         }
-        return arbNums
+        return arbNums.take(searchP)
     }
 
     fun getPreviousSearches() {
