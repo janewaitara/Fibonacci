@@ -18,6 +18,7 @@ Good decision
  * Empty state screen - Guides the user on what to do when they first install the app
  * No autosearch - Having an autosearch field would have made the state recomposition happen on every entry in the search field, hence the need to add a button for the search/request
  * Result card - Used constraint layout to align the texts. The alignment allows for emphasis of the important text(result) while still showing the time of request.
+ * KeyBoard Input - The apps shows an digit keyboard to guide the user on what input is expected. To prevent errors, the input field does not accept letters but digits only.
  
 Poor decision
  * There is a mismatch between the words search and request. There should be a synchronized word to avoid user confusion. 
