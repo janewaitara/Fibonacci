@@ -12,7 +12,6 @@ import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import java.time.LocalDateTime
 import javax.inject.Inject
-import kotlin.math.sqrt
 
 @HiltViewModel
 class SearchNumberViewModel @Inject constructor(
@@ -59,13 +58,21 @@ class SearchNumberViewModel @Inject constructor(
             insertFibonacciNumber(fibonacciSearch)
         }
     }
-
-    // Todo Update the function to the correct implementation
     private fun generateArbitraryNumbers(searchParam: Long): List<Int> {
-        val result1 = sqrt(searchParam.toDouble())
-        val result2 = sqrt(searchParam.toDouble())
-
-        return listOf(result1.toInt(), result2.toInt())
+        val arbNums = mutableListOf(0, 1)
+        val searchP = searchParam.toInt()
+        if (searchP < 2) {
+            return arbNums.take(searchP + 1)
+        }
+        var prev = 0
+        var curr = 1
+        for (i in 2..searchP) {
+            val nextFib = prev + curr
+            arbNums.add(nextFib)
+            prev = curr
+            curr = nextFib
+        }
+        return arbNums
     }
 
     fun getPreviousSearches() {
